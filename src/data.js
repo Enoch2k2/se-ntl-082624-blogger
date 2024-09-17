@@ -1,4 +1,4 @@
-export const blogs = [
+export const data = [
   {
     title: "Blog 1",
     author: "Bob",

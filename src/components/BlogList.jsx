@@ -5,6 +5,7 @@ function BlogList({ blogs }) {
 
   const blogCards = blogs.map((blog, index) => <BlogCard key={index} {...blog} color="blue" />)
 
+  console.log('bloglist render')
   return (
     <>
       <h3>Blog List</h3>
