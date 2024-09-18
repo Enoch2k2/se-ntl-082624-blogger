@@ -4,6 +4,7 @@ import Header from './components/Header'
 import { data } from './data'
 
 function App() {
+<<<<<<< HEAD
   const [blogs, setBlogs] = useState(data)
   
   // console.log(blogs)
@@ -14,6 +15,8 @@ function App() {
   //     return <h1>Goodbye World!</h1>
   //   }
   // }
+=======
+>>>>>>> main
 
   function addBlog() {
     let randomNum = Math.floor(Math.random() * 10000) + 1
@@ -42,20 +45,5 @@ function App() {
     </div>
   )
 }
-
-// const App = () => {
-//   return (
-//     <>
-//       <h1>Hello World</h1>
-//     </>
-//   )
-// }
-
-
-// {true ? <div>
-//   <h1>Hello World</h1>
-//   <h3>{name}</h3>
-//   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ab impedit blanditiis libero explicabo, perferendis provident quis iusto ex dolorem enim iure, dolore quod eveniet omnis rem? Corporis, maiores nostrum?</p>
-// </div> : <h1>Goodbye World</h1>}
 
 export default App
