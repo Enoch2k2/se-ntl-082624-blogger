@@ -2,45 +2,27 @@ import { useState } from 'react'
 import BlogList from './components/BlogList'
 import Header from './components/Header'
 import { data } from './data'
+import BlogForm from './components/BlogForm'
 
 function App() {
-<<<<<<< HEAD
   const [blogs, setBlogs] = useState(data)
-  
-  // console.log(blogs)
-  // function displayH1() {
-  //   if(false) {
-  //     return <h1>Hello World</h1>
-  //   } else {
-  //     return <h1>Goodbye World!</h1>
-  //   }
-  // }
-=======
->>>>>>> main
 
-  function addBlog() {
-    let randomNum = Math.floor(Math.random() * 10000) + 1
-    const blog =  {
-      title: "Blog " + randomNum,
-      author: "Bob",
-      content: `Blog ${randomNum} Content`
-    }
-
+  function addBlog(blog) {
     setBlogs([...blogs, blog])
   }
 
   console.log('blogs', blogs)
   console.log('app render')
 
-  function cancelCopy(event) {
-    event.preventDefault()
-    alert("YOU SHALL NOT PASS! Copy i mean copy")
-  }
+  // function cancelCopy(event) {
+  //   event.preventDefault()
+  //   alert("YOU SHALL NOT PASS! Copy i mean copy")
+  // }
 
   return (
-    <div onCopy={cancelCopy}>
+    <div>
       <Header />
-      <button onClick={addBlog}>Add Blog</button>
+      <BlogForm addBlog={addBlog} />
       <BlogList blogs={blogs} />
     </div>
   )
