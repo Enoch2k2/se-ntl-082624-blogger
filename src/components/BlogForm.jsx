@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { BlogContext } from '../context/blogContext'
 
 const initialState = {
   title: "",
@@ -6,9 +7,10 @@ const initialState = {
   content: ""
 }
 
-function BlogForm({ addBlog }) {
+function BlogForm() {
 
   const [blog, setBlog] = useState(initialState)
+  const { addBlog } = useContext(BlogContext)
 
   function handleSubmit(event) {
     event.preventDefault()

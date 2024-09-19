@@ -1,7 +1,11 @@
+import { useContext } from "react"
 import BlogCard from "./BlogCard"
+import { BlogContext } from "../context/blogContext"
 
 
-function BlogList({ blogs }) {
+function BlogList() {
+
+  const { blogs } = useContext(BlogContext)
 
   const blogCards = blogs.map((blog, index) => <BlogCard key={index} {...blog} color="blue" />)
 
