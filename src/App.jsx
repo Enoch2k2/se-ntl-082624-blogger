@@ -11,8 +11,8 @@ function App() {
   return (
     <div>
       <UserProvider>
-        <Header />
         <BlogProvider>
+          <Header />
           <BlogForm />
           <BlogList />
         </BlogProvider>

@@ -7,7 +7,7 @@ function BlogList() {
 
   const { blogs } = useContext(BlogContext)
 
-  const blogCards = blogs.map((blog, index) => <BlogCard key={index} {...blog} color="blue" />)
+  const blogCards = blogs.map((blog) => <BlogCard key={blog.id} {...blog} color="blue" />)
 
   console.log('bloglist render')
   return (

@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { BlogContext } from '../context/blogContext'
+import { useFormChange } from '../custom_hooks/Form'
 
 const initialState = {
   title: "",
@@ -8,24 +9,9 @@ const initialState = {
 }
 
 function BlogForm() {
-
-  const [blog, setBlog] = useState(initialState)
   const { addBlog } = useContext(BlogContext)
-
-  function handleSubmit(event) {
-    event.preventDefault()
-
-    addBlog(blog)
-    setBlog(initialState)
-  }
-
-  function handleChange(event) {
-    setBlog({
-      ...blog,
-      [event.target.name]: event.target.value
-    })
-  }
-
+  const [blog, handleChange, handleSubmit] = useFormChange(initialState, addBlog)
+  
   return (
     <div>
       <h3>Create Blog</h3>
